@@ -13,6 +13,7 @@ module.exports = function (api) {
                     extensions: [".ts", ".tsx", ".js", ".json", ".svg"],
                 },
             ],
+            "react-native-worklets/plugin", // 👈 updated for Reanimated 3+
         ],
     };
 };

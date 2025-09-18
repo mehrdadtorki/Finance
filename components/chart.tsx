@@ -34,8 +34,10 @@ const TransactionsChart: React.FC = () => {
     { value: 3.1, frontColor: "#FDE272" },
     { value: 3.7, label: "May", frontColor: "#6172F3", spacing: 2 },
     { value: 2.8, frontColor: "#FDE272" },
-    { value: 3.7, label: "Jun", frontColor: "#6172F3", spacing: 2 },
-    { value: 2.8, frontColor: "#FDE272" },
+    { value: 3.1, label: "Jun", frontColor: "#6172F3", spacing: 2 },
+    { value: 2.9, frontColor: "#FDE272" },
+    { value: 2.7, label: "July", frontColor: "#6172F3", spacing: 2 },
+    { value: 3.8, frontColor: "#FDE272" },
   ];
 
   const yearData = [
