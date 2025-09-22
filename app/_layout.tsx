@@ -1,11 +1,12 @@
 import { ThemeProvider } from "@/context/ThemeContext";
 import { initDB, seedDB } from "@/services/db";
-import { Stack } from "expo-router";
 import { useEffect, useState } from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { PaperProvider } from "react-native-paper";
 import "react-native-reanimated";
+import OnboardingScreen from "./(tabs)/OnboardingScreen";
 import SplashScreen from "./(tabs)/splashScreen";
-import Welcome from "./(tabs)/welcome/welcome";
+// import Welcome from "./(tabs)/OnboardingScreen";
 
 export default function RootLayout() {
   const [loading, setLoading] = useState(true);
@@ -30,13 +31,20 @@ export default function RootLayout() {
       <PaperProvider>
         {loading ? (
           <SplashScreen />
+        ) : (
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <OnboardingScreen />
+          </GestureHandlerRootView>
+        )}
+        {/* {loading ? (
+          <SplashScreen />
         ) : showWelcome ? (
-          <Welcome onFinish={() => setShowWelcome(false)} />
+          <OnboardingScreen />
         ) : (
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           </Stack>
-        )}
+        )} */}
       </PaperProvider>
     </ThemeProvider>
   );
