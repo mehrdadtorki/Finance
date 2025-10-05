@@ -1,11 +1,9 @@
 import { ThemeProvider } from "@/context/ThemeContext";
 import { initDB, seedDB } from "@/services/db";
 import { useEffect, useState } from "react";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { PaperProvider } from "react-native-paper";
 import "react-native-reanimated";
-import OnboardingScreen from "./(tabs)/OnboardingScreen";
-import SplashScreen from "./(tabs)/splashScreen";
+import SplashScreen from "./(tabs)/splash-screen/splashScreen";
 // import Welcome from "./(tabs)/OnboardingScreen";
 
 export default function RootLayout() {
@@ -29,17 +27,12 @@ export default function RootLayout() {
   return (
     <ThemeProvider>
       <PaperProvider>
-        {loading ? (
-          <SplashScreen />
-        ) : (
+        {/*  {loading ? ( */}
+        <SplashScreen />
+        {/*  ) : showWelcome ? (
           <GestureHandlerRootView style={{ flex: 1 }}>
             <OnboardingScreen />
           </GestureHandlerRootView>
-        )}
-        {/* {loading ? (
-          <SplashScreen />
-        ) : showWelcome ? (
-          <OnboardingScreen />
         ) : (
           <Stack>
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
